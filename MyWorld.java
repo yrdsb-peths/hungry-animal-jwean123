@@ -14,6 +14,7 @@ public class MyWorld extends World
     public int lives = 3;
     Label livesLabel;
     
+    Dolphin dolphin;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -24,7 +25,7 @@ public class MyWorld extends World
         super(600, 400, 1, false);
         
         //Create the dolphin object
-        Dolphin dolphin = new Dolphin();
+        dolphin = new Dolphin();
         addObject(dolphin, 200, 370);
         
         //Create the labels
@@ -45,8 +46,16 @@ public class MyWorld extends World
     public void createBread()
     {
         Bread bread = new Bread();
-        int x = Greenfoot.getRandomNumber(600);
-        int y = 60;
+        int x;
+        if(dolphin.getX() > 300)
+        {
+            x = dolphin.getX() - Greenfoot.getRandomNumber(225);
+        }
+        else
+        {
+            x = dolphin.getX() + Greenfoot.getRandomNumber(225);
+        }
+        int y = -15;
         addObject(bread, x, y);
     }
     

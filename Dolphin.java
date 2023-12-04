@@ -13,11 +13,11 @@ public class Dolphin extends Actor
         // Movement
         if(Greenfoot.isKeyDown("A"))
         {
-            move(-2);
+            move(-1);
         }
         else if(Greenfoot.isKeyDown("D"))
         {
-            move(2);
+            move(1);
         }
         
         // Remove bread if dolphin eats it
