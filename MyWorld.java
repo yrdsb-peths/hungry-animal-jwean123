@@ -11,6 +11,9 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     
+    public int points = 0;
+    Label pointsLabel;
+    
     public int lives = 3;
     Label livesLabel;
     
@@ -32,9 +35,11 @@ public class MyWorld extends World
         scoreLabel = new Label("score: " + score, 30);
         addObject(scoreLabel, 50, 40);
         
+        pointsLabel = new Label("points: " + points, 30);
+        addObject(pointsLabel, 50, 80);
+        
         livesLabel = new Label("lives: " + lives, 30);
         addObject(livesLabel, 540, 40);
-        
         
         //Create the bread object
         createBread();
@@ -55,7 +60,7 @@ public class MyWorld extends World
         {
             x = dolphin.getX() + Greenfoot.getRandomNumber(225);
         }
-        int y = -15;
+        int y = -16;
         addObject(bread, x, y);
     }
     
@@ -85,5 +90,7 @@ public class MyWorld extends World
     {
         Label gameOver = new Label("Game over", 100);
         addObject(gameOver, 300, 200);
+        points += score;
+        pointsLabel.setValue("points: " + points);
     }
 }

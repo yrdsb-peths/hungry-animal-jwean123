@@ -10,10 +10,10 @@ public class Bread extends Actor
 {
     public void act()
     {
-        // Apple falling
+        //Bread falling
         setLocation(getX(), getY() + 2);
         
-        // Substract a life when apple falls to the floor, if no lives left draw game over.
+        // Substract a life when bread falls to the floor, if no lives left draw game over.
         MyWorld world = (MyWorld) getWorld();
         if(getY() == world.getHeight())
         {
