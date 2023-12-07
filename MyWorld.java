@@ -9,10 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
+    public int oldScore = score;
     Label scoreLabel;
-    
-    public int points = 0;
-    Label pointsLabel;
     
     public int lives = 3;
     Label livesLabel;
@@ -35,15 +33,13 @@ public class MyWorld extends World
         scoreLabel = new Label("score: " + score, 30);
         addObject(scoreLabel, 50, 40);
         
-        pointsLabel = new Label("points: " + points, 30);
-        addObject(pointsLabel, 50, 80);
-        
         livesLabel = new Label("lives: " + lives, 30);
         addObject(livesLabel, 540, 40);
         
         //Create the bread object
         createBread();
     }
+    
     
     /**
      * Create a new bread at the top of the screen with a random X position
@@ -54,11 +50,11 @@ public class MyWorld extends World
         int x;
         if(dolphin.getX() > 300)
         {
-            x = dolphin.getX() - Greenfoot.getRandomNumber(225);
+            x = dolphin.getX() - Greenfoot.getRandomNumber(300);
         }
         else
         {
-            x = dolphin.getX() + Greenfoot.getRandomNumber(225);
+            x = dolphin.getX() + Greenfoot.getRandomNumber(300);
         }
         int y = -16;
         addObject(bread, x, y);
@@ -90,7 +86,5 @@ public class MyWorld extends World
     {
         Label gameOver = new Label("Game over", 100);
         addObject(gameOver, 300, 200);
-        points += score;
-        pointsLabel.setValue("points: " + points);
     }
 }
