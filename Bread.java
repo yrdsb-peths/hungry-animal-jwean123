@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bread extends Actor
 {
-    int speed = 1;
+    int speed = 2;
     
     public void act()
     {

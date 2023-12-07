@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dolphin extends Actor
 {
-    int speed = 1;
+    int speed = 2;
+    int score = 0;
+    int oldScore = score;
     public void act()
     {
         // Movement
@@ -23,15 +25,18 @@ public class Dolphin extends Actor
         
         // Remove bread if dolphin eats it
         eat();
+        
+        //Makes sure speed will increase over time
+        increaseSpeed();
     }
     
     public void increaseSpeed()
     {
-        MyWorld world = (MyWorld) getWorld();
-         if(world.oldScore + 10 == world.score)
-         {
-             speed += 1;
-         }
+        if(oldScore + 5 == score)
+        {
+            speed++;
+            oldScore = score;
+        }
     }
     
     public void eat()
@@ -42,6 +47,7 @@ public class Dolphin extends Actor
             removeTouching(Bread.class);
             world.createBread();
             world.increaseScore();
+            score++;
         }
     }
 }
