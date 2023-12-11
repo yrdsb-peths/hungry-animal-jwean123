@@ -19,7 +19,7 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        mainLabel = new Label("Welcome to hungry dolphin!\n Press [E] to start", 40);
+        mainLabel = new Label("Welcome to hungry dolphin!\n Press [E] to start and \n [F] to end game", 40);
         addObject(mainLabel, getWidth() / 2, (getHeight() / 2) - 20);
         
         rulesLabel = new Label("(speed increases by 1 for every 5 score)", 25);

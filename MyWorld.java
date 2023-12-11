@@ -20,6 +20,7 @@ public class MyWorld extends World
     
     Dolphin dolphin;
     Bread bread;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -51,7 +52,14 @@ public class MyWorld extends World
     
     public void act()
     {
+        //The speed change function
         increaseSpeed();
+        
+        TitleScreen titleScreen = new TitleScreen();
+        if(Greenfoot.isKeyDown("F"))
+        {
+            Greenfoot.setWorld(titleScreen);
+        }
     }
     
     public int getScore()
@@ -127,7 +135,8 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        Label gameOver = new Label("Game over", 100);
-        addObject(gameOver, 300, 200);
+        Label gameOver = new Label("Game over \n Press [E] to return to title screen", 50);
+        addObject(gameOver, getWidth() / 2, getHeight() / 2);
     }
+    
 }

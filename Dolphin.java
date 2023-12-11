@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The Dolphin, a dolphin.
  * 
  * @author Juan 
- * @version November 2023
+ * @version December 2023
  */
 public class Dolphin extends Actor
 {

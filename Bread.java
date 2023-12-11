@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The bread, a treat for the Dolphin
  * 
  * @author Juan 
- * @version November 2023
+ * @version December 2023
  */
 public class Bread extends Actor
 {
@@ -17,14 +17,9 @@ public class Bread extends Actor
         /*Substract a life when bread falls to the floor, 
          * if no lives left draw game over.
          */
-        
-        
-        /*
-         * Just comment this for now.
-         * 
         if(getY() > world.getHeight())
         {
-            removeObjects(Bread.class);
+            getWorld().removeObject(this);
             world.substractLives();
             if(world.getLives() > 0)
             {
@@ -35,7 +30,6 @@ public class Bread extends Actor
                 world.gameOver();
             }
         }
-        */
     }
     
 }
