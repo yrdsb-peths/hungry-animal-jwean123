@@ -17,7 +17,8 @@ public class Bread extends Actor
         /*Substract a life when bread falls to the floor, 
          * if no lives left draw game over.
          */
-        if(getY() == world.getHeight())
+         
+        if(getY() > world.getHeight())
         {
             world.substractLives();
             if(world.getLives() > 0)

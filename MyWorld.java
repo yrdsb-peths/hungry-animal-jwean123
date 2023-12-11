@@ -46,7 +46,10 @@ public class MyWorld extends World
         createBread();
         
         
-        //Ensure speed is increasing
+    }
+    
+    public void act()
+    {
         increaseSpeed();
     }
     
