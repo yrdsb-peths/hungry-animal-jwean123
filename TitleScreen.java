@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label mainLabel;
+    Label rulesLabel;
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -18,8 +19,11 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        mainLabel = new Label("Welcome to hungry dolphin!\n \n Press [E] to start!", 40);
-        addObject(mainLabel, getWidth() / 2, (getHeight() / 2));
+        mainLabel = new Label("Welcome to hungry dolphin!\n Press [E] to start", 40);
+        addObject(mainLabel, getWidth() / 2, (getHeight() / 2) - 20);
+        
+        rulesLabel = new Label("(speed increases by 1 for every 5 score)", 25);
+        addObject(rulesLabel, getWidth() / 2, (getHeight() / 2) + 90);
     }
     
     public void act()

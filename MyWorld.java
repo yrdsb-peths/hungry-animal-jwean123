@@ -19,6 +19,7 @@ public class MyWorld extends World
     Label livesLabel;
     
     Dolphin dolphin;
+    Bread bread;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -73,7 +74,7 @@ public class MyWorld extends World
      */
     public void createBread()
     {
-        Bread bread = new Bread();
+        bread = new Bread();
         int x;
         if(dolphin.getX() > 300)
         {
@@ -86,6 +87,7 @@ public class MyWorld extends World
         int y = -16;
         addObject(bread, x, y);
     }
+    
     
     /**
      * Increase the score by 1 when an apple is picked up
