@@ -8,13 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bread extends Actor
 {
-    int speed = 2;
-    
     public void act()
     {
         MyWorld world = (MyWorld) getWorld();
         //Bread falling
-        setLocation(getX(), getY() + speed);
+        setLocation(getX(), getY() + world.getSpeed());
         
         /*Substract a life when bread falls to the floor, 
          * if no lives left draw game over.
@@ -22,7 +20,7 @@ public class Bread extends Actor
         if(getY() == world.getHeight())
         {
             world.substractLives();
-            if(world.lives > 0)
+            if(world.getLives() > 0)
             {
                 world.createBread();
             }
@@ -31,14 +29,5 @@ public class Bread extends Actor
                 world.gameOver();
             }
         }
-    }
-    
-    public void increaseSpeed()
-    {
-        MyWorld world = (MyWorld) getWorld();        
-         if(world.oldScore + 10 == world.score)
-         {
-             speed += 1;
-         }
     }
 }

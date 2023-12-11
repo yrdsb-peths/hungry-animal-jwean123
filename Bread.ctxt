@@ -3,6 +3,4 @@ comment0.target=Bread
 comment0.text=\r\n\ The\ bread,\ a\ treat\ for\ the\ Dolphin\r\n\ \r\n\ @author\ Juan\ \r\n\ @version\ November\ 2023\r\n
 comment1.params=
 comment1.target=void\ act()
-comment2.params=
-comment2.target=void\ increaseSpeed()
-numComments=3
+numComments=2
