@@ -12,3 +12,12 @@ This particular repository is the starting template for the Hungry Elephant tuto
 [Part 2: Game Enhancements](https://youtu.be/TwID9i0Ey6o)
 
 [Part 3: Final Touches](https://youtu.be/GT-eFwa4Abc)
+
+
+WHAT THE GAME IS ABOUT:
+
+- You are playing as the hungry dolphin
+- The dolphin's objective is to catch bread falling into the ocean
+- Every bread you catch adds one to the score, every bread you fail to catch results in losing one life
+- Every 5 score you get, the speed of the dolphin and the bread falling both increase by 1
+- Try to survive as long as you can!
