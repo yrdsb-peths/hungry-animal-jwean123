@@ -2,7 +2,11 @@
 comment0.target=Dolphin
 comment0.text=\r\n\ The\ Dolphin,\ a\ dolphin.\r\n\ \r\n\ @author\ Juan\ \r\n\ @version\ December\ 2023\r\n
 comment1.params=
-comment1.target=void\ act()
+comment1.target=Dolphin()
 comment2.params=
-comment2.target=void\ eat()
-numComments=3
+comment2.target=void\ animateDolphin()
+comment3.params=
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ eat()
+numComments=5
