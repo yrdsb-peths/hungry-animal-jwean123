@@ -8,16 +8,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dolphin extends Actor
 {
-    GreenfootImage dolphins[] = new GreenfootImage[5];
+    GreenfootSound ate = new GreenfootSound("NomNomNom.mp3");
     
+    GreenfootImage dolphinsRight[] = new GreenfootImage[5];
+    GreenfootImage dolphinsLeft[] = new GreenfootImage[5];
+    
+    private boolean facingRight;
+    SimpleTimer animationTimer = new SimpleTimer();
+    
+    /**
+     * Constructor
+     */
     public Dolphin()
     {
-        int i;
-        for(i = 0; i < dolphins.length; i++)
+        for(int i = 0; i < dolphinsRight.length; i++)
         {
-            dolphins[i] = new GreenfootImage("images/dolphin_stuff/dolphin" + i + ".png");
+            dolphinsRight[i] = new GreenfootImage("images/dolphin_stuff/dolphinRight" + i + ".png");
+            dolphinsRight[i].scale(80, 55);
         }
-        setImage(dolphins[0]);
+        
+        for(int i = 0; i < dolphinsLeft.length; i++)
+        {
+            dolphinsLeft[i] = new GreenfootImage("images/dolphin_stuff/dolphinLeft" + i + ".png");
+            dolphinsLeft[i].scale(80, 55);
+        }
+        
+        animationTimer.mark();
+        
+        //Initial dolphin image
+        setImage(dolphinsRight[0]);
+        facingRight = true;
     }
     
     /**
@@ -27,8 +47,22 @@ public class Dolphin extends Actor
     int imageIndex = 0;
     public void animateDolphin()
     {
-        setImage(dolphins[imageIndex]);
-        imageIndex = (imageIndex + 1) % dolphins.length;
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(facingRight)
+        {
+            setImage(dolphinsRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % dolphinsRight.length;
+        }
+        else
+        {
+            setImage(dolphinsLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % dolphinsLeft.length;    
+        }
     }
     
     public void act()
@@ -38,10 +72,12 @@ public class Dolphin extends Actor
         // Movement
         if(Greenfoot.isKeyDown("A"))
         {
+            facingRight = false;
             move(-world.getSpeed());
         }
         else if(Greenfoot.isKeyDown("D"))
         {
+            facingRight = true;
             move(world.getSpeed());
         }
         
@@ -58,6 +94,7 @@ public class Dolphin extends Actor
         MyWorld world = (MyWorld) getWorld();
         if(isTouching(Bread.class))
         {
+            ate.play();
             removeTouching(Bread.class);
             world.createBread();
             world.increaseScore();

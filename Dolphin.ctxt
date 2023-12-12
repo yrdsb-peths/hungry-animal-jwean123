@@ -3,6 +3,7 @@ comment0.target=Dolphin
 comment0.text=\r\n\ The\ Dolphin,\ a\ dolphin.\r\n\ \r\n\ @author\ Juan\ \r\n\ @version\ December\ 2023\r\n
 comment1.params=
 comment1.target=Dolphin()
+comment1.text=\r\n\ Constructor\r\n
 comment2.params=
 comment2.target=void\ animateDolphin()
 comment3.params=

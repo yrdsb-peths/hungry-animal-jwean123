@@ -8,11 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    GreenfootSound gangamStyle = new GreenfootSound("LOLgangam.mp3");
+    GreenfootSound yowch = new GreenfootSound("uhuHUHweepow.mp3");
+    
     private int score = 0;
     private int oldScore = score;
     Label scoreLabel;
     
-    private int speed = 2;
+    private int speed = 3;
     Label speedLabel;
     
     private int lives = 3;
@@ -32,7 +35,7 @@ public class MyWorld extends World
         
         //Create the dolphin object
         dolphin = new Dolphin();
-        addObject(dolphin, 200, 370);
+        addObject(dolphin, getWidth() / 2, getHeight() - 40);
         
         //Create the labels
         scoreLabel = new Label("score: " + score, 30);
@@ -46,19 +49,21 @@ public class MyWorld extends World
         
         //Create the bread object
         createBread();
-        
-        
     }
     
     public void act()
     {
+        gangamStyle.playLoop();
+        
         //The speed change function
         increaseSpeed();
         
+        //Allows the user to return to title screen at any time
         TitleScreen titleScreen = new TitleScreen();
         if(Greenfoot.isKeyDown("F"))
         {
             Greenfoot.setWorld(titleScreen);
+            gangamStyle.stop();
         }
     }
     
@@ -135,8 +140,9 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        Label gameOver = new Label("Game over \n Press [E] to return to title screen", 50);
+        Label gameOver = new Label("Game over \n Press [F] to return to title screen", 40);
         addObject(gameOver, getWidth() / 2, getHeight() / 2);
+        yowch.play();
     }
     
 }
